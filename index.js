@@ -9,16 +9,18 @@ client.on("ready", () => console.log(`Bot has started, with ${client.users.size}
 
 
 
-client.on("message", m => {
-	if(!message.author.bot) return;
+client.on("message", (message) => {
+	
+	if(message.author.bot) return;
  
 	if(message.content.indexOf(prefix) !== 0) return;
+	//if(!message.content.startsWith(prefix)) return;
  
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 })
 
-if(message.content.startsWith(prefix + "ping")) {
+if(message.content.startsWith(prefix + "ping")){
 	message.channel.send("PONG");
 	return;
 }
