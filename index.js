@@ -10,7 +10,7 @@ client.on("ready", () => console.log(`Bot has started, with ${client.users.size}
 
 
 client.on("message", m => {
-	if(message.author.bot) return;
+	if(!message.author.bot) return;
  
 	if(message.content.indexOf(prefix) !== 0) return;
  
@@ -18,8 +18,9 @@ client.on("message", m => {
 	const command = args.shift().toLowerCase();
 })
 
-if(message.content.startsWith(prefix + "ping"))
+if(message.content.startsWith(prefix + "ping")) {
 	message.channel.send("PONG");
 	return;
+}
  
 client.login(token);
