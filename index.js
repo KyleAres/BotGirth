@@ -18,11 +18,11 @@ client.on("message", (message) => {
  
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
-})
 
-if(message.content.startsWith(prefix + "ping")){
-	message.channel.send("PONG");
-	return;
-}
- 
+	
+	if(message.content.startsWith(prefix + "ping")){
+		message.channel.send("PONG");
+		return;
+	}
+}) 
 client.login(token);
