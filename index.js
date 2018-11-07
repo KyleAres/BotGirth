@@ -10,12 +10,14 @@ client.on("ready", () => console.log(`Bot has started, with ${client.users.size}
 
 
 client.on("message", m => {
- if(m.author.bot) return;
- if(m.content.indexOf(prefix) !== 0) return;
+ if(message.author.bot) return;
+ if(message.content.indexOf(prefix) !== 0) return;
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
 })
 
-if(m.content.startsWith(prefix + "foo")) return m.channel.send("bar!");
+if(message.content.startsWith(prefix + "foo")) return message.channel.send("bar!");
  
 client.login(token);
+
+https://youtu.be/8Z1Q1ifs9r0?t=886
