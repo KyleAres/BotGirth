@@ -16,8 +16,6 @@ client.on("message", m => {
  const command = args.shift().toLowerCase();
 })
 
-if(message.content.startsWith(prefix + "foo") {
- message.channel.send("bar!");
-});
+if(message.content.startsWith(prefix + "foo")) return message.channel.send("bar!");
  
 client.login(token);
